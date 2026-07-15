@@ -15,8 +15,51 @@ import {
   Volume2,
 } from "lucide-react";
 import robot from "@/assets/robot-mascot.png";
-import phone from "@/assets/phone-mockup.png";
+import bearAsset from "@/assets/bear.png.asset.json";
 import skyBg from "@/assets/sky-bg.jpg";
+
+function PhoneMockup({ className = "" }: { className?: string }) {
+  return (
+    <div className={`relative w-[280px] md:w-[340px] aspect-[9/19] rounded-[42px] bg-white p-3 shadow-2xl ring-1 ring-black/5 ${className}`}>
+      <div className="absolute left-1/2 -translate-x-1/2 top-2 h-6 w-28 bg-black rounded-full z-10" />
+      <div className="relative h-full w-full rounded-[32px] bg-white overflow-hidden flex flex-col">
+        <div className="flex items-center justify-between px-5 pt-3 text-[11px] font-semibold text-black">
+          <span>9:41</span>
+          <span>•••</span>
+        </div>
+        <div className="flex items-center justify-between px-5 pt-4">
+          <div className="flex items-center gap-2">
+            <div className="h-8 w-8 rounded-full bg-gradient-to-br from-rose-300 to-orange-300" />
+            <div>
+              <div className="text-[9px] text-slate-500">Welcome Back 👋</div>
+              <div className="text-sm font-bold text-slate-900">Karina</div>
+            </div>
+          </div>
+          <div className="h-7 w-7 rounded-full bg-slate-100 grid place-items-center text-slate-500 text-xs">🔔</div>
+        </div>
+        <div className="mx-4 mt-3 rounded-2xl bg-[color:var(--sky-deep)] p-3 relative overflow-hidden flex-1">
+          <div className="text-white font-display font-bold text-base leading-tight max-w-[55%]">
+            Continue your lessons with excited.
+          </div>
+          <img src={bearAsset.url} alt="" className="absolute right-1 bottom-6 w-[58%] object-contain" />
+          <div className="absolute left-3 bottom-3 flex items-end gap-2">
+            <div className="relative h-10 w-10 rounded-full bg-white/20 grid place-items-center text-white text-[10px] font-bold border-2 border-white/60">72%</div>
+            <div className="relative h-10 w-10 rounded-full bg-white/20 grid place-items-center text-white text-[10px] font-bold border-2 border-white/60">30</div>
+          </div>
+        </div>
+        <div className="flex items-center gap-1.5 px-4 py-2.5">
+          {[["💼","Work"],["☕","Daily Life"],["🏠","Family"]].map(([e,l])=>(
+            <span key={l} className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-slate-100 text-[9px] font-medium text-slate-700">{e} {l}</span>
+          ))}
+        </div>
+        <div className="mx-4 mb-3 rounded-xl bg-slate-100 p-2 flex items-center gap-2">
+          <div className="h-6 w-6 rounded-md bg-slate-300" />
+          <div className="text-[10px] font-semibold text-slate-700">Business Communication</div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export const Route = createFileRoute("/")({
   component: Landing,
