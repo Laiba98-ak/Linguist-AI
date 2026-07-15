@@ -20,41 +20,52 @@ import skyBg from "@/assets/sky-bg.jpg";
 
 function PhoneMockup({ className = "" }: { className?: string }) {
   return (
-    <div className={`relative w-[280px] md:w-[340px] aspect-[9/19] rounded-[42px] bg-white p-3 shadow-2xl ring-1 ring-black/5 ${className}`}>
-      <div className="absolute left-1/2 -translate-x-1/2 top-2 h-6 w-28 bg-black rounded-full z-10" />
-      <div className="relative h-full w-full rounded-[32px] bg-white overflow-hidden flex flex-col">
-        <div className="flex items-center justify-between px-5 pt-3 text-[11px] font-semibold text-black">
+    <div className={`relative w-[300px] md:w-[360px] aspect-[9/19] rounded-[48px] bg-black p-[6px] shadow-2xl ${className}`}>
+      <div className="relative h-full w-full rounded-[42px] bg-white overflow-hidden flex flex-col">
+        <div className="absolute left-1/2 -translate-x-1/2 top-2 h-7 w-28 bg-black rounded-full z-20" />
+        <div className="flex items-center justify-between px-6 pt-3 text-[11px] font-semibold text-black">
           <span>9:41</span>
-          <span>•••</span>
+          <span className="opacity-0">.</span>
         </div>
-        <div className="flex items-center justify-between px-5 pt-4">
+        <div className="flex items-center justify-between px-5 pt-5">
           <div className="flex items-center gap-2">
-            <div className="h-8 w-8 rounded-full bg-gradient-to-br from-rose-300 to-orange-300" />
+            <div className="h-9 w-9 rounded-full bg-gradient-to-br from-rose-300 to-orange-300 ring-2 ring-white" />
             <div>
-              <div className="text-[9px] text-slate-500">Welcome Back 👋</div>
-              <div className="text-sm font-bold text-slate-900">Karina</div>
+              <div className="text-[10px] text-slate-500">Welcome Back 👋</div>
+              <div className="text-[15px] font-bold text-slate-900 leading-tight">Karina</div>
             </div>
           </div>
-          <div className="h-7 w-7 rounded-full bg-slate-100 grid place-items-center text-slate-500 text-xs">🔔</div>
+          <div className="h-8 w-8 rounded-full bg-slate-100 grid place-items-center text-slate-500 text-sm">🔔</div>
         </div>
-        <div className="mx-4 mt-3 rounded-2xl bg-[color:var(--sky-deep)] p-3 relative overflow-hidden flex-1">
-          <div className="text-white font-display font-bold text-base leading-tight max-w-[55%]">
-            Continue your lessons with excited.
+        <div className="mx-3 mt-3 rounded-3xl bg-[color:var(--sky-deep)] relative overflow-hidden flex-1">
+          <div className="absolute top-3 left-4 right-4 z-10">
+            <div className="text-white font-display font-bold text-[15px] leading-tight max-w-[62%]">
+              Continue your lessons with excited.
+            </div>
           </div>
-          <img src={bearAsset.url} alt="" className="absolute right-1 bottom-6 w-[58%] object-contain" />
-          <div className="absolute left-3 bottom-3 flex items-end gap-2">
-            <div className="relative h-10 w-10 rounded-full bg-white/20 grid place-items-center text-white text-[10px] font-bold border-2 border-white/60">72%</div>
-            <div className="relative h-10 w-10 rounded-full bg-white/20 grid place-items-center text-white text-[10px] font-bold border-2 border-white/60">30</div>
+          <img src={bearAsset.url} alt="" className="absolute inset-x-0 bottom-10 mx-auto w-[95%] object-contain" />
+          <div className="absolute left-3 bottom-3 right-3 flex items-center justify-between z-10">
+            <div className="flex -space-x-2">
+              <div className="h-11 w-11 rounded-full bg-white/25 backdrop-blur grid place-items-center text-white text-[11px] font-bold border-2 border-white/70">72%</div>
+              <div className="h-11 w-11 rounded-full bg-white/25 backdrop-blur grid place-items-center text-white text-[11px] font-bold border-2 border-white/70">30</div>
+            </div>
+            <div className="h-9 w-9 rounded-full bg-white grid place-items-center text-[color:var(--sky-deep)]">
+              <ArrowRight className="h-4 w-4" />
+            </div>
           </div>
         </div>
-        <div className="flex items-center gap-1.5 px-4 py-2.5">
+        <div className="flex items-center gap-1.5 px-4 pt-3">
           {[["💼","Work"],["☕","Daily Life"],["🏠","Family"]].map(([e,l])=>(
-            <span key={l} className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-slate-100 text-[9px] font-medium text-slate-700">{e} {l}</span>
+            <span key={l} className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-full bg-slate-100 text-[10px] font-semibold text-slate-700">{e} {l}</span>
           ))}
         </div>
-        <div className="mx-4 mb-3 rounded-xl bg-slate-100 p-2 flex items-center gap-2">
-          <div className="h-6 w-6 rounded-md bg-slate-300" />
-          <div className="text-[10px] font-semibold text-slate-700">Business Communication</div>
+        <div className="mx-3 my-3 rounded-2xl bg-slate-50 p-2.5 flex items-center gap-2.5 border border-slate-100">
+          <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-sky-400 to-sky-600 grid place-items-center text-white text-xs">💼</div>
+          <div className="flex-1">
+            <div className="text-[11px] font-bold text-slate-800">Business Communication</div>
+            <div className="text-[9px] text-slate-500">12 lessons · 45 min</div>
+          </div>
+          <ArrowRight className="h-3.5 w-3.5 text-slate-400" />
         </div>
       </div>
     </div>
