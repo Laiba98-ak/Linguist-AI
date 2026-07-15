@@ -138,7 +138,7 @@ function Hero() {
         {/* Phone + floating feature cards */}
         <div className="relative -mt-32 md:-mt-48 px-6 md:px-12 max-w-7xl mx-auto pb-8">
           <div className="relative flex justify-center">
-            <img src={phone} alt="Linguist app on iPhone" className="relative z-10 w-[280px] md:w-[360px] drop-shadow-2xl" width={360} height={720} />
+            <PhoneMockup className="relative z-10" />
 
             {/* Left cards */}
             <FloatCard className="left-0 md:left-8 top-12" solid>
