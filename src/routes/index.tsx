@@ -530,7 +530,7 @@ function CTA() {
             </div>
           </div>
           <div className="relative flex justify-center">
-            <img src={phone} alt="" className="w-[280px] md:w-[340px] drop-shadow-2xl" loading="lazy" />
+            <PhoneMockup />
           </div>
         </div>
       </div>
